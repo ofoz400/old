@@ -63,7 +63,7 @@ int getNegativ(char *buf)
 	for(i = 0; buf[i]; i++)
 		if(buf[i] == '-' && isdigit(buf[i+1])){
 			sscanf(buf+i, "%d", &neg);
-				return neg;
+			return neg;
 		}
 	return 1;
 }
