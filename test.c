@@ -6,18 +6,20 @@
 /*get the input source and copies it to a new string without double space*/
 void clearDoubleSpace(const char *source, char *copy)
 {
-	 int i, j, tmp;
+	  int i, j, tmp;
 	 for(i = j = 0; source[i]; i++, j++)
 	 {
-	 	source[i] == '\t' ? i++ : 0;
-	 	if(source[i] == ' ') {
+	 	if(source[i] == ' ' || source[i] == '\t') {
 	 		tmp = i+1;
 	 		if(source[tmp] != '\0') {
-	 			for(; source[tmp] == ' ' && source[tmp]; tmp++)
+	 			for(; (source[tmp] == ' ' || source[tmp] == '\t') && source[tmp]; tmp++)
 	 				i++;
 	 		}
 	 	}
-	 	copy[j] = source[i];
+	 	if(source[i] == '\t')
+	 		copy[j] = ' ';
+	 	else
+	     	copy[j] = source[i];	
 	 }
 	
 	 copy[j] = '\0';
