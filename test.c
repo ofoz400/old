@@ -19,7 +19,7 @@ void clearDoubleSpace(const char *source, char *copy)
 	 	if(source[i] == '\t')
 	 		copy[j] = ' ';
 	 	else
-	     	copy[j] = source[i];	
+	     		copy[j] = source[i];	
 	 }
 	
 	 copy[j] = '\0';
