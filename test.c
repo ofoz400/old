@@ -40,10 +40,7 @@ void printBits(int x, FILE *fd)
 	unsigned short mask;
 	for(mask = 1 << 11; mask; mask >>= 1)
 	{
-		if(x & mask)
-			fprintf(fd, "/");
-		else 
-			fprintf(fd, ".");
+		(x & mask) ? fprintf(fd, "/") : fprintf(fd, ".");
 	}
 	fprintf(fd, "\n");
 }
