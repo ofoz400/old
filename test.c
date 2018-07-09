@@ -57,6 +57,16 @@ int isEmpty(char *buf)
 	
 	return (*buf == '\0');
 }
+int getNegativ(char *buf)
+{
+	int neg = 0, i;
+	for(i = 0; buf[i]; i++)
+		if(buf[i] == '-' && isdigit(buf[i+1])){
+			sscanf(buf+i, "%d", &neg);
+				return neg;
+		}
+	return 1;
+}
 
 int main (int argc, char *argv[])
 {
