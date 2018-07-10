@@ -3,33 +3,34 @@
 
 int main(int argc, char *argv[])
 {
-  char *fileName;
-  int nameLen;
-  
+	char *fileName;
+	int nameLen;
 	if (argc == 0)
 	{
 		fprintf(stderr, "Error - command line is empty . \n");
 		exit(1);
 	}
   
-  if (argc == 1)
+	if (argc == 1)
 	{
 		fprintf(stderr, "Error - file name is missing . \n");
 		exit(1);
 	}
   
   
-  if (argc == 2)
-  {
-    fileName = argv[1];
-    nameLen = strlen(fileName);
+	if (argc == 2)
+	{
+		fileName = argv[1];
+		nameLen = strlen(fileName);
     
-    fd = fopen(fileName, "r");
+		fd = fopen(fileName, "r");
     
-    if (!fd)
+		if (!fd)
+		{	
 			fprintf(stderr, "Error opening file %s - file doesn't exist. \n", fileName);
-      exit(1);
-  }
+      			exit(1);
+		}
+  	}
   
 return 0;
 }
