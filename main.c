@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 	if (argc == 0)
 	{
 		fprintf(stderr, "Error - command line is empty . \n");
-		return 1;
+		exit(1);
 	}
   
   if (argc == 1)
