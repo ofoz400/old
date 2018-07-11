@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		fileName = argv[1];
 		nameLen = strlen(fileName);
-		AssemblerError=FALSE; /*to be changed to FALSE when an error is found by the assmbler in the command text*/
+		AssemblerError = FALSE; /*to be changed to FALSE when an error is found by the assmbler in the command text*/
     
 		fd = fopen(fileName, "r");
     
@@ -36,6 +36,9 @@ int main(int argc, char *argv[])
 		assmblerTest(fd); /*going over the file to look for errors*/
 		
 		if (AssemblerError!)  /*in case no error is found by the assmbler- the rogram creates the output files (in the binary code) for the command lines*/
+		{
+			f = fopen(strcat(fileName, ".ob"), "w");
+		}
   	}
 	
 	fclose(fd);
