@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int AssemblerError; /*to recive TRUE (0) or FALSE (1) from definened enum- indicating when an error was found by the assmbler*/
+int AssemblerError. entryNeeded, externNeeded, ; /*to recive TRUE (0) or FALSE (1) from definened enum- indicating when an error was found by the assmbler*/
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +24,9 @@ int main(int argc, char *argv[])
 		fileName = argv[1];
 		nameLen = strlen(fileName);
 		AssemblerError = FALSE; /*to be changed to FALSE when an error is found by the assmbler in the command text*/
-    
+    		entryNeeded = FALSE;
+		externNeeded = FALSE;
+		
 		fd = fopen(fileName, "r");
     
 		if (!fd)
@@ -37,7 +39,17 @@ int main(int argc, char *argv[])
 		
 		if (AssemblerError!)  /*in case no error is found by the assmbler- the rogram creates the output files (in the binary code) for the command lines*/
 		{
-			f = fopen(strcat(fileName, ".ob"), "w");
+			fd = fopen(strcat(fileName, ".ob"), "w");  /*creats object file*/
+			
+			if (entryNeeded)
+			{	
+				fd = fopen(strcat(fileName, ".ent"), "w");  /*creats entries file*/
+			}
+			
+			if (externNeeded)
+			{
+				fd = fopen(strcat(fileName, ".ext"), "w");  /*creats externals file*/
+			}
 		}
   	}
 	
