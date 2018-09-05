@@ -332,8 +332,8 @@ int getOperandType(char *p){
 	if(isRegister(p) >= 0)
 		return REG;
 	while(*p){
-		if(*p == '['){
-			return MAT;
+		if(*p == '('){
+			return JMP;
 		}
 		p++;
 	}
