@@ -179,17 +179,17 @@ int getMatSize(char *p){
 	int num1 = 0,num2 = 0;
 	int numOfRightBrackets=0, numOfLeftBrackets=0;
 	do{
-		if(*temp == '['){
+		if(*temp == '('){
 			numOfLeftBrackets += 1;
-		}else if (*temp == ']'){
+		}else if (*temp == ')'){
 			numOfRightBrackets += 1;
 		}else if (!isdigit(*temp)){
 			printf("Error in line %d: Mat definition has unrelated chars\n", lineNumber);
 			return 0;
 		}
 		temp++;
-	}while(*temp && numOfLeftBrackets < 3 && numOfRightBrackets < 3 && ((numOfLeftBrackets-numOfRightBrackets) == 0 || (numOfLeftBrackets-numOfRightBrackets) == 1));
-	if(numOfRightBrackets == 2 && numOfLeftBrackets == 2){
+	}while(*temp && numOfLeftBrackets < 2 && numOfRightBrackets < 2 && ((numOfLeftBrackets-numOfRightBrackets) == 0 || (numOfLeftBrackets-numOfRightBrackets) == 1));
+	if(numOfRightBrackets == 1 && numOfLeftBrackets == 1){
 		token = strtok(p, "[]");
 		if(token){
 			num1 = (int) strtol(token, &endChar, 10);
