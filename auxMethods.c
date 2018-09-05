@@ -429,7 +429,7 @@ int encodeOperator(lptr labelPtr, char *oper, int operType, int isSourceOper, in
 					IC++; break;
 				case 2:
 					if(*oper == '['){
-						printf("Error in line %d: Missing Mat name\n", lineNumber);
+						printf("Error in line %d: Missing symbol befoe enclosing\n", lineNumber);
 						IC+=2;
 						return 1;
 					}
